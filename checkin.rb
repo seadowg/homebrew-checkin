@@ -8,10 +8,11 @@ class Checkin < Formula
   head "https://github.com/seadowg/checkin.git"
 
   def install
-    system "./install.sh", "#{prefix}"
+    system "mkdir", "#{prefix}/bin/"
+    system "./install.sh", "#{prefix}/bin/"
   end
 
   test do
-    system "checkin"
+    system bin/"checkin"
   end
 end
